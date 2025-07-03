@@ -1,0 +1,5 @@
+# Vite env
+.env
+.env.*
+!.env.example
+/backend/serviceAccountKey.json
