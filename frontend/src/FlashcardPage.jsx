@@ -683,21 +683,31 @@ function FlashcardPage() {
           )}
           {error && (
             <div className="error-message">
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
+              <div className="success-content">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <line x1="15" y1="9" x2="9" y2="15" />
+                  <line x1="9" y1="9" x2="15" y2="15" />
+                </svg>
+                <span>{error}</span>
+              </div>
+              <button
+                className="error-close"
+                onClick={() => setError(null)}
+                aria-label="Close error message"
               >
-                <circle cx="12" cy="12" r="10" />
-                <line x1="15" y1="9" x2="9" y2="15" />
-                <line x1="9" y1="9" x2="15" y2="15" />
-              </svg>
-              {error}
+                ×
+              </button>
             </div>
           )}
+
           <div className="input-wrapper">
             <label className="input-label">
               Text Material
@@ -768,15 +778,19 @@ function FlashcardPage() {
             {isGenerating ? (
               <>
                 <svg
-                  width="18"
-                  height="18"
+                  className="spinner-small"
+                  width="20"
+                  height="20"
                   viewBox="0 0 24 24"
                   fill="none"
-                  stroke="currentColor"
-                  className="spinner"
-                  strokeWidth="2"
                 >
-                  <path d="M21 12a9 9 0 11-6.219-8.56" />
+                  <path
+                    d="M12 2V6M12 18V22M6 12H2M22 12H18M19.0784 19.0784L16.25 16.25M19.0784 4.99994L16.25 7.82837M4.92157 19.0784L7.75 16.25M4.92157 4.99994L7.75 7.82837"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
                 </svg>
                 Generating...
               </>

@@ -33,14 +33,6 @@ function SignIn() {
         <div className="nav-logo" onClick={() => navigate("/")}>
           WeFlash
         </div>
-        <div className="nav-links">
-          <button
-            className="cta-button primary"
-            onClick={() => navigate("/signin")}
-          >
-            Sign In
-          </button>
-        </div>
       </div>
 
       <div className="signin-content">

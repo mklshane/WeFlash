@@ -938,6 +938,16 @@ html.dark .header {
     width: 52px;
     height: 52px;
   }
+
+  .delete-button {
+
+    opacity: 1;
+    transform: scale(0.8);
+    background: var(--error-light);
+    color: var(--error);
+  }
+  
+
 }
 
 /* Focus Styles for Accessibility */
