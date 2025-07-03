@@ -32,6 +32,7 @@ const allowedOrigins = [
   "http://localhost:5174",
   "http://localhost:5175",
   "http://localhost:5177",
+  'https://weflash-1.onrender.com',
 ];
 
 
