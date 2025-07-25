@@ -33,7 +33,7 @@ function DeckPage() {
     checkAuth();
   }, [navigate]);
 
-  // 🗃️ Fetch decks
+  // Fetch decks
   const fetchDecks = async () => {
     try {
       setLoading(true);

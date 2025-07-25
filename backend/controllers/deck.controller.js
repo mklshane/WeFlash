@@ -23,7 +23,11 @@ export const createDeck = async (req, res) => {
 
 export const getDecks = async (req, res) => {
   try {
-    const decks = await Deck.find({ user: req.userId }); // filter by user
+    const decks = await Deck.find({ user: req.userId })
+      .select("title description createdAt") // only needed fields
+      .sort({ createdAt: -1 }) // optional: latest decks first
+      .lean(); // improve speed
+
     res.status(200).json({ success: true, data: decks });
   } catch (err) {
     res.status(500).json({ success: false, message: "Failed to fetch decks" });
